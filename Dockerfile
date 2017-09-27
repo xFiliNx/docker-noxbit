@@ -1,7 +1,7 @@
 FROM base/archlinux:latest
 RUN echo -e '[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch\n' >> /etc/pacman.conf &&\
     pacman -Syu --noconfirm &&\
-    pacman -S --noconfirm yaourt sudo fakeroot vi nginx &&\
+    pacman -S --noconfirm yaourt sudo fakeroot vi &&\
     useradd noxbit && usermod -aG wheel noxbit &&\
     echo "%wheel ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
 USER noxbit
