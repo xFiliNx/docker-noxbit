@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+    noxbit:
+        image: xfilinx/noxbit:latest
+        deploy:
+            replicas: 8
+            restart_policy:
+                condition: on-failure
+        ports:
+            - 6689:6689
+        command:
+            - "<noxbit_uid>"
+            - "<noxbit_pass>"
